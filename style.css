@@ -1,0 +1,794 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+
+
+/* width */
+::-webkit-scrollbar {
+        width: 10px;
+    }
+    
+    /* Track */
+    ::-webkit-scrollbar-track {
+        background: #f1f1f1;
+    }
+    
+    /* Handle */
+    ::-webkit-scrollbar-thumb {
+        background: #f00;
+        transition: .3s ease-out;
+    }
+    
+    /* Handle on hover */
+    ::-webkit-scrollbar-thumb:hover {
+        background: #000;
+    }
+
+img {
+    cursor: pointer;
+}
+
+
+::selection {
+    color: #fff;
+    background-color: #f00;
+}
+
+.content {
+    width: 100%;
+    height: calc100vh;
+    background-image: url(images/banner-bg.png);
+}
+
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* background-color: #f00; */
+    padding: 20px 30px;
+}
+
+header .logo {
+    cursor: pointer;
+}
+
+.fa-bars {
+    display: none !important ;
+    background-color: #fff;
+    color: #000;
+    font-size: 24px;
+    padding: 12px;
+    border-radius: 5px;
+}
+
+#chk-box {
+    display: none;
+}
+
+
+.links ul li {
+    display: inline-block;
+    padding: 10px 15px;
+    position: relative;
+}
+
+.links ul li::before {
+    content: "";
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #fff;
+    position: absolute;
+    left: -5px;
+    top: 37%;
+}
+
+.links ul li a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 500;
+    text-transform: uppercase;
+    transition: .3s ease-out;
+}
+
+.links ul li a:hover {
+    color: #000;
+}
+
+.btn {
+    border: 2px solid #fff;
+    padding: 8px;
+    border-radius: 37px;
+    color: #fff;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+header .btn:hover {
+    background-color: #fff;
+    color: #000;
+}
+
+.header-right {
+    color: #fff;
+}
+
+.header-right i {
+    margin-left: 10px;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.search {
+    display: none;  
+}
+.fa-magnifying-glass {
+    position: relative;
+}
+
+/*  .fa-magnifying-glass::after {
+    content: "Press Tab";
+    display: none;
+    background-color: #f00;
+    color: #fff;
+    position: absolute;
+    right: 0;
+    bottom: -10px;
+} 
+.fa-magnifying-glass:hover::after {
+    display: block;
+} 
+
+.fa-magnifying-glass:hover ~.search {
+    display: block;
+    position: absolute;
+    top: 80px;
+    right: 30px;
+}*/
+
+
+
+/* most used (classes) */
+
+.bg {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+
+.landing {
+    width: 100%;
+    padding: 40px 0 ;
+}
+
+
+
+/* media styling */
+
+.container {
+    padding: 0 15px;
+    margin: 0 auto;
+}
+
+@media (min-width:768px) {
+    .container {
+        width: 750px;
+    }
+}
+
+@media (min-width:992px) {
+    .container {
+        width: 970px;
+    }
+}
+
+@media (min-width:1200px) {
+    .container {
+        width: 1170px;
+    }
+}
+
+.landing .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+.landing .landing-content {
+    color: #fff;
+    position: relative;
+}
+
+.landing .landing-content h1 {
+    line-height: 2;
+    font-size: 40px;
+}
+.landing .landing-content p {
+    line-height: 2;
+    text-transform: capitalize;
+    font-size: 24px;
+}
+
+.landing .landing-content div {
+    display: flex;
+    margin-top: 18px; 
+}
+
+.landing .landing-content .btn{
+    background-color: #000;
+    border: #000;
+    width: fit-content;
+    padding: 12px 20px;
+    margin-right: 10px;
+}
+
+/* need js here */
+
+.landing .landing-content .switches {
+    position: absolute;
+    left: -12%;
+    top: 32%;
+    display: none;
+    cursor: pointer;
+}
+
+.switches  div {
+    border: 2px solid #fff;
+    margin-bottom: 20px;
+    padding: 25px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    position: relative;
+}
+
+.switches div i {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50% , -50%);
+    color: #000;
+}
+
+.switches div i.fa-left-long {
+    color: #fff;
+}
+
+.servs .container  {
+    display: grid;
+    grid-template-columns: repeat(auto-fill , minmax(350px , 1fr));
+    gap: 20px;
+}
+
+
+.serv {
+    background-color: #000;
+    color: #fff;
+    text-align: center;
+    padding: 30px;
+    transition: .3s ease-out;
+    cursor: pointer;
+    border-radius: 10px;
+    border-bottom: 2px solid #f00;
+}
+
+.serv:hover {
+    transform: scale(1.05);
+}
+
+.active {
+    background-color: #fff;
+    color: #000;
+}
+
+.serv h2 {
+    padding-bottom: 15px;
+    font-size: 35px;
+    text-transform: capitalize;
+}
+
+
+.serv p {
+    line-height: 1.7;
+}
+
+
+.serv i {
+    font-size: 30px;
+}
+
+.serv img {
+    width: 70px;
+}
+
+.about {
+    background: url(images/about-bg.png);
+    padding: 100px 0 30px;
+}
+
+.about .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.about .container .about-img img {
+    width: 100%;
+    max-width: 100%;
+}
+
+.about .container .about-text h1 {
+    line-height: 1.8;
+}
+.about .container .about-text p {
+    line-height: 1.7;
+    padding: 30px 0;
+}
+
+.about .container .about-text .text {
+    display: flex;
+}
+
+.about .container .about-text span {
+    padding: 18px 45px;
+    color: #fff;
+    font-weight: 400;
+    cursor: pointer;
+    font-size: 20px;
+}
+.about .container .about-text span.one {
+    background: #f00;
+    border-radius: 37px 0 0 37px;
+}
+.about .container .about-text span.two {
+    background: #000;
+    margin-left: -4px;
+    border-radius: 0 37px  37px 0 ;
+    transition: .3s ease-out;
+}
+
+.about .container .about-text span.two:hover {
+    background: #f00;
+}
+.about .container .about-text .btn {
+    display: block;
+    background: #000;
+    width: fit-content;
+    padding: 18px 45px;
+    margin: 20px 0;
+    transition: .3s ease-out;
+}
+
+.about .container .about-text .btn:hover {
+    background: #f00;
+}
+
+@media (max-width:991px) {
+    /* .links {
+        position: absolute;
+        top: 69px;
+        left: 100%;
+        background-color: #000;
+        width: calc(100% - 60px);
+        z-index: 1000;
+        text-align: center;
+        border-radius: 5px;
+        transition: .5s ease-out;
+    } */
+    /* another menu style  */
+    .links {
+       opacity: 0;
+        position: absolute;
+        top: -500px;
+        right: 0;
+
+        padding-right: 15px;
+        background-color: #363632;
+        width: calc(100%);
+        z-index: 1000;
+        text-align: right;
+        border-radius: 5px;
+        transition: .5s ease-out;
+    }
+    .links ul li {
+        display: block;
+    }
+
+    .links ul li::before {
+        display: none;
+    }
+    .header-right {
+        display: none;
+    }
+    .landing .container {
+        flex-direction: column;
+        text-align: center;
+    }
+    .ladning-image img {
+        width: 350px;
+    }
+    .landing .landing-content div {
+        justify-content: space-around;
+        margin-bottom: 18px;
+    }
+    .switches {
+        display: none !important;
+    }
+    .fa-bars {
+        display: block !important;
+        transition: .5s ease-out;
+        cursor: pointer;
+    }
+    #chk-box:checked ~ .links  {
+        opacity: .9;
+        top: 90px;
+    }
+    .about .container {
+        flex-direction: column;
+        text-align: center;
+    }
+    /* .about .container .about-img img  {
+        width: 350px;
+        max-width: 350px;
+    } */
+    .start {
+        display: none;
+        /* position: absolute;
+        top: 94px;
+        right: 23px;
+        z-index: 1000;
+        transform: rotate(34deg); */
+    }
+    .about .text {
+        justify-content: center;
+    }
+    .about .container .about-text span {
+        font-size: 14px;
+    }
+    .about .container .about-text .btn  {
+        margin: 20px auto;
+    }
+}
+
+.plan {
+    background-color: #000;
+    padding: 50px 0;
+    border-radius: 10px 10px 0 0;
+}
+
+.container .cards {
+    margin: 50px 0 ;
+    display: grid;
+    grid-template-columns: repeat(auto-fill , minmax(350px , 1fr));
+    gap: 20px;
+}
+
+
+.plan-text-top {
+    color: #fff;
+}
+
+.plan-text-top .head-plan {
+    color: #f00;
+    font-size: 30px;
+    font-weight: 400;
+}
+
+
+.plan-text-top h1 {
+    margin: 15px 0 ;
+}
+.plan-text-top  p {
+    margin: 15px 0 ;
+}
+
+.cards .card {
+    background-color: #fff;
+    text-align: center;
+    line-height: 2.5;
+    border-radius: 6px;
+    cursor: pointer;
+    position: relative;
+    transition: .1s ease-out;
+}
+
+.cards .card:hover {
+    box-shadow:  6px 6px 4px 0px rgb(255, 0, 0); 
+}
+
+
+.cards .card h2 {
+    background-color: #f00;
+    color: #fff;
+}
+
+.cards .card span {
+    display: block;
+}
+.cards .card span.price {
+    color: red;
+    font-size: 30px;
+    font-weight: 500;
+}
+.cards .card span.time {
+    font-size: 24px;
+    margin-top: -30px;
+    margin-left: 160px;
+}
+.cards .card span.comment {
+    padding: 10px;
+    color: #555;
+}
+
+.cards .card::after {
+    content: "Subscribe";
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: calc(100% + 20px);
+    background-color: #f00;
+    color: #fff;
+    border: 2px solid #fff;
+    padding: 10px 45px;
+    border-radius: 37px;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+
+
+/* check start */
+
+.check  {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin: 30px 0;
+}
+
+
+.check  .check-head {
+    padding: 20px;
+}
+
+.check .controller-shape {
+    background-color: #f00;
+    border-radius:0  0 10px 10px ;
+}
+
+.check .controller-shape h3 {
+    color: #fff;
+    padding: 20px 0;
+}
+
+.check form div {
+    background-color: #fff;
+    margin: 30px auto;
+    width: 600px;
+    height: 50px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    border-radius: 30px;
+}
+
+.check form div input {
+    padding: 10px 15px;
+    border: none;
+    position: absolute;
+    border: none;
+    position: absolute;
+    border-radius: 6px;
+}
+
+.check form div input[type="text"] {
+    width: 100%;
+    height: 100%;
+    font-size: 16px;
+}
+
+.check form div input[type="submit"] {
+    color: #fff;
+    right: 4px;
+    top: 10%;
+    height: 80%;
+    background-color: #000;
+    font-size: 18px;
+    text-transform: uppercase;
+}
+
+.check form div input[type="text"]:focus {
+    outline: 2px solid #f00;
+}
+
+.check form div input::placeholder {
+    color: #666;
+    font-size: 16px;
+}
+
+
+.review {
+    margin: 30px 0;
+}
+
+.head-review {
+    text-align: center;
+    margin: 50px 0;
+    font-size: 45px;
+}
+
+.rev {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+}
+
+.rev-text  {
+    position: relative;
+}
+
+.rev-text span.name{
+    display: block;
+    font-weight: 500;
+    font-size: 24px;
+    margin-bottom: 12px;
+}
+
+
+.rev-img img {
+    border: 2px solid;
+    border-radius: 25px;
+}
+
+.rev-text img.qoute {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+
+
+.subscribe {
+    background-color: #f00;
+    border-bottom: 4px solid #fff;
+    padding: 40px 0;
+}
+
+
+.subscribe .container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.subscribe .container h1 {
+    color: #fff;
+}
+
+.subscribe form input {
+    border: none;
+    height: 50px;
+}
+
+input[type="submit"] {
+    cursor: pointer;
+}
+
+.subscribe form input[type="text"] {
+    background-color: #fff;
+    width: 600px;
+    position: relative;
+    border-radius: 6px;
+    padding: 10px 15px;
+}
+
+.subscribe form input[type="submit"] {
+    color: #fff;
+    background-color: #000;
+    font-size: 18px;
+    text-transform: uppercase;
+    padding: 10px 15px;
+    border-radius: 6px;
+    margin-left: 20px;
+}
+
+
+.subscribe form input[type="text"]:focus {
+    outline: 2px solid #f00;
+}
+
+@media (max-width:991px) {
+    .check form div {
+        width: 350px;
+    }
+    .rev {
+        flex-direction: column;
+        text-align: center;
+    }
+    .subscribe form input[type="text"] {
+        width: 250px;
+    }
+    .subscribe .container {
+        flex-direction: column;
+        text-align: center;
+        line-height: 1.6;
+    }
+    input[type="submit"] {
+        font-size: 14px;
+    }
+    .container .cards {
+        gap: 110px;
+    }
+}
+
+@media (max-width:1199px) {
+    .subscribe .container  input[type="submit"] {
+        margin-left: 0;
+        margin-top: 10px;
+    }
+    .container .cards {
+        gap: 110px;
+    }
+}
+
+.footer {
+    background-color: #313131;
+}
+
+.footer .container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill , minmax(280px , 1fr));
+    gap: 20px;
+    color: #fff;
+    padding: 40px 0;
+}
+
+
+/* all the elemnt in the footer are now block */
+
+.footer .container * {
+    display: block;
+}
+
+.footer .container p {
+    margin-top: 10px;
+    line-height: 1.7;
+}
+.col {
+    text-align: center;
+    /* box-shadow: 0px 13px 27px -5px rgba(50,50,93,0.25) , 0px 8px 16px -8px rgba(0,0,0,0.3) , 0px -6px 16px -6px rgba(0,0,0,0.025) ;*/
+    border-right: 2px solid rgba(0,0,0,0.3);
+    padding-right: 5px;
+}
+
+.col a {
+    text-decoration: none;
+    color: #fff;
+    padding-top: 10px ;
+    font-size: 30px;
+    font-weight: 500;
+}
+.col img {
+    margin: 0 auto;
+}
+
+
+.hide {
+    display: none !important;
+}
