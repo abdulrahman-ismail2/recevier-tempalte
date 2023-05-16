@@ -272,7 +272,7 @@ header .btn:hover {
 
 .servs .container  {
     display: grid;
-    grid-template-columns: repeat(auto-fill , minmax(270px , 1fr));
+    grid-template-columns: repeat(auto-fill , minmax(280px , 1fr));
     gap: 20px;
 }
 
@@ -475,7 +475,7 @@ header .btn:hover {
 .container .cards {
     margin: 50px 0 ;
     display: grid;
-    grid-template-columns: repeat(auto-fill , minmax(270px , 1fr));
+    grid-template-columns: repeat(auto-fill , minmax(280px , 1fr));
     gap: 20px;
 }
 
